@@ -6,6 +6,17 @@
    - vi-like cursor movement keys to allow one-handed cursor movement.
    */
 
+#define MY_EXCL SHIFT(KC_1)
+#define MY_AT   SHIFT(KC_2)
+#define MY_HASH SHIFT(KC_3)
+#define MY_DOLL SHIFT(KC_4)
+#define MY_PERC SHIFT(KC_5)
+#define MY_CRAT SHIFT(KC_6)
+#define MY_AMPR SHIFT(KC_7)
+#define MY_STAR SHIFT(KC_8)
+#define MY_LPAR SHIFT(KC_9)
+#define MY_RPAR SHIFT(KC_0)
+
 #define LAYER_BASE 0
 #define LAYER_RAISE 1
 #define LAYER_LOWER 2
@@ -45,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     +------+------+------+------+------+             +------+------+------+------+------+
     |Z/LSFT|  X   |  C   |  V   |  B   |             |  N   |  M   |  ,   |  .   |//RSFT|
     +------+------+------+------+------+------+------+------+------+------+------+------+
-    | ESC  | TAB  | LSFT | LGUI | BSPC | LCTL |ENT/RA| SPC  |RAISE |  -   |  '   |LOWER?|
+    | ESC  | TAB  | LSFT | LGUI | BSPC | LCTL |ENT/RA| SPC  |RAISE |  -   |  '   |LOWER |
     +------+------+------+------+------+------+------+------+------+------+------+------+
    */
   KEYMAP(KC_Q,   KC_W,   KC_E, KC_R, KC_T,     KC_Y,   KC_U,   KC_I,    KC_O,   KC_P,     \
@@ -65,25 +76,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     |      |      |      |      |      |      |      |      |      |      |      |      |
     +------+------+------+------+------+------+------+------+------+------+------+------+
    */
-
-  KEYMAP(KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, \
+  KEYMAP(KC_1, KC_2, KC_3, KC_4, KC_5,             KC_6, KC_7, KC_8, KC_9, KC_0, \
                                 SHIFT(KC_3), KC_LEFT, KC_DOWN, KC_RIGHT, SHIFT(KC_4), \
                                   KC_PGDN, KC_4, KC_5, KC_6, SHIFT(KC_EQUAL), \
                                 KC_LBRC, KC_RBRC, SHIFT(KC_9), SHIFT(KC_0), SHIFT(KC_7), \
                                   KC_GRAVE, KC_1, KC_2, KC_3, KC_BSLS,    \
                                 MY_BOOT, SHIFT(KC_INS), KC_LGUI, KC_LSFT, KC_BSPC, KC_LCTL, \
-                                  KC_LALT, KC_SPC, MY_RAIS, KC_DOT, KC_0, MY_RLYR), 
+                                  KC_LALT, KC_SPC, MY_RAIS, KC_DOT, KC_0, MY_LOWR), 
                                                                       \
-  /* LAYER_LOWER */
+  /* LAYER_LOWER
+    +------+------+------+------+------+             +------+------+------+------+------+
+    |  !   |  @   |  #   |  $   |  %   |             |  ^   |  &   |  *   |  (   |  )   |
+    +------+------+------+------+------+             +------+------+------+------+------+
+    |      |      |      |      |      |             |      |      |      |      |      |
+    +------+------+------+------+------+             +------+------+------+------+------+
+    |      |      |      |      |      |             |      |      |      |      |      |
+    +------+------+------+------+------+------+------+------+------+------+------+------+
+    |      |      |      |      |      |      |      |      |      |      |      |      |
+    +------+------+------+------+------+------+------+------+------+------+------+------+
+   */
 
-  KEYMAP(KC_INS, KC_HOME, KC_UP, KC_END, KC_PGUP, \
-                         KC_UP, KC_F7, KC_F8, KC_F9, KC_F10, \
+  KEYMAP(MY_EXCL, MY_AT, MY_HASH, MY_DOLL, MY_PERC,    MY_CRAT, MY_AMPR, MY_STAR, MY_LPAR, MY_RPAR, \
                          KC_DEL, KC_LEFT, KC_DOWN, KC_RIGHT, KC_PGDN, \
                          KC_DOWN, KC_F4, KC_F5, KC_F6, KC_F11,          \
                          KC_NO, KC__VOLUP, KC_NO, KC_NO, MY_BOOT, \
                          KC_NO, KC_F1, KC_F2, KC_F3, KC_F12,            \
                          MY_RLYR, KC__VOLDOWN, KC_LGUI, KC_LSFT, KC_BSPC, KC_LCTL, \
-                         KC_LALT, KC_SPC, KC_NO, KC_PSCREEN, KC_SLCK, KC_PAUSE),
+                         KC_LALT, KC_SPC, KC_NO, KC_PSCREEN, KC_SLCK, MY_LOWR),
 
   /* LAYER_RESET */
   KEYMAP(MY_BOOT,KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
