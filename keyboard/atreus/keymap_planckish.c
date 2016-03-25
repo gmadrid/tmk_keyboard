@@ -17,6 +17,7 @@
 #define MY_LPAR SHIFT(KC_9)
 #define MY_RPAR SHIFT(KC_0)
 
+// Symbolic layer numbers. Keep these in sync with the "keymaps" array.
 #define LAYER_BASE 0
 #define LAYER_RAISE 1
 #define LAYER_LOWER 2
@@ -56,31 +57,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     +------+------+------+------+------+             +------+------+------+------+------+
     |Z/LSFT|  X   |  C   |  V   |  B   |             |  N   |  M   |  ,   |  .   |//RSFT|
     +------+------+------+------+------+------+------+------+------+------+------+------+
-    | ESC  | TAB  | LSFT | LGUI | BSPC | LCTL |ENT/RA| SPC  |RAISE |  -   |  '   |LOWER |
+    | ESC  | TAB  | LGUI |LOWER | BSPC | LCTL |ENT/RA| SPC  |RAISE |  -   |  '   |LOWER |
     +------+------+------+------+------+------+------+------+------+------+------+------+
    */
   KEYMAP(KC_Q,   KC_W,   KC_E, KC_R, KC_T,     KC_Y,   KC_U,   KC_I,    KC_O,   KC_P,     \
          KC_A,   KC_S,   KC_D, KC_F, KC_G,     KC_H,   KC_J,   KC_K,    KC_L,   KC_SCLN,  \
          MY_Z,   KC_X,   KC_C, KC_V, KC_B,     KC_N,   KC_M,   KC_COMM, KC_DOT, MY_SLSH,  \
-         KC_ESC, KC_TAB, KC_LSFT, KC_LGUI, KC_BSPC, KC_LCTL,                              \
+         KC_ESC, KC_TAB, KC_LGUI, MY_LOWR, KC_BSPC, KC_LCTL,                              \
                                        MY_ENT, KC_SPC, MY_RAIS,KC_MINS, KC_QUOT, MY_LOWR),
 
   /* LAYER_RAISE 
     +------+------+------+------+------+             +------+------+------+------+------+
     |  1   |  2   |  3   |  4   |  5   |             |  6   |  7   |  8   |  9   |  0   |
     +------+------+------+------+------+             +------+------+------+------+------+
-    |      |      |      |      |      |             |      |      |  UP  |      |      |
+    |      |      |      |      |      |             | PGUP | HOME |  UP  | END  |      |
     +------+------+------+------+------+             +------+------+------+------+------+
-    |      |      |      |      |      |             |      | LEFT | DOWN |RIGHT |      |
+    |      |      |      |      |      |             | PGDN | LEFT | DOWN |RIGHT |      |
     +------+------+------+------+------+------+------+------+------+------+------+------+
-    |      |      |      |      |      |      |      |      |RAISE |      |      |RESET |
+    |      |      |      |RESET |      |      |      |      |RAISE |      |      |RESET |
     +------+------+------+------+------+------+------+------+------+------+------+------+
    */
   KEYMAP(KC_1,  KC_2,  KC_3,  KC_4,  KC_5,             KC_6,    KC_7,    KC_8,    KC_9,     KC_0,  \
-         KC_NO, KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO,     KC_PGDN, KC_4,    KC_UP,   KC_6,     KC_NO, \
-         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,            KC_NO,   KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO, \
-                                MY_BOOT, SHIFT(KC_INS), KC_LGUI, KC_LSFT, KC_BSPC, KC_LCTL, \
-                                  KC_LALT, KC_SPC, MY_RAIS, KC_DOT, KC_0, MY_RLYR), 
+         KC_NO, KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO,     KC_PGUP, KC_HOME, KC_UP,   KC_END,   KC_NO, \
+         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,            KC_PGDN,   KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO, \
+         KC_NO, SHIFT(KC_INS), KC_LGUI, MY_RLYR, KC_BSPC, KC_LCTL, \
+                                              KC_LALT, KC_SPC, MY_RAIS, KC_DOT, KC_0, MY_RLYR), 
                                                                       
   /* LAYER_LOWER
     +------+------+------+------+------+             +------+------+------+------+------+
@@ -90,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     +------+------+------+------+------+             +------+------+------+------+------+
     |      |      |      |      |      |             |      |      |      |      |      |
     +------+------+------+------+------+------+------+------+------+------+------+------+
-    |      |      |      |      |      |      |      |      |RESET |      |      |LOWER |
+    |      |      |      |LOWER |      |      |      |      |RESET |      |      |LOWER |
     +------+------+------+------+------+------+------+------+------+------+------+------+
    */
 
@@ -99,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          KC_DOWN, KC_F4, KC_F5, KC_F6, KC_F11,          \
                          KC_NO, KC__VOLUP, KC_NO, KC_NO, MY_BOOT, \
                          KC_NO, KC_F1, KC_F2, KC_F3, KC_F12,            \
-                         MY_RLYR, KC__VOLDOWN, KC_LGUI, KC_LSFT, KC_BSPC, KC_LCTL, \
+                         MY_RLYR, KC__VOLDOWN, KC_LGUI, MY_LOWR, KC_BSPC, KC_LCTL, \
                          KC_LALT, KC_SPC, MY_RLYR, KC_PSCREEN, KC_SLCK, MY_LOWR),
 
   /* LAYER_RESET - Top left key resets. All other keys do nothing. */
