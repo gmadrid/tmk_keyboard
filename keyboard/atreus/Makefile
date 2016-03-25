@@ -39,7 +39,7 @@
 #----------------------------------------------------------------------------
 
 # Set to /dev/cu.usbmodem1421 or whatever on Macs
-USB ?= /dev/ttyACM0
+USB ?= /dev/cu.usbmodem1411
 
 # Target file name (without extension).
 TARGET = atreus
@@ -55,7 +55,7 @@ SRC =	keymap_common.c \
 	matrix.c \
 	led.c
 
-KEYMAP ?= qwerty
+KEYMAP ?= mine
 SRC := keymap_$(KEYMAP).c $(SRC)
 
 CONFIG_H = config.h
@@ -97,6 +97,8 @@ ARCH = AVR8
 #     If no clock division is performed on the input clock inside the AVR (via the
 #     CPU clock adjust registers or the clock division fuses), this will be equal to F_CPU.
 F_USB = $(F_CPU)
+
+OPT_DEFS += -DPCBDOWN
 
 # Interrupt driven control endpoint task(+60)
 OPT_DEFS += -DINTERRUPT_CONTROL_ENDPOINT
