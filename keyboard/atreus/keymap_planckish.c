@@ -69,21 +69,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     +------+------+------+------+------+             +------+------+------+------+------+
     |  1   |  2   |  3   |  4   |  5   |             |  6   |  7   |  8   |  9   |  0   |
     +------+------+------+------+------+             +------+------+------+------+------+
-    |      |      |      |      |      |             |      |      |      |      |      |
+    |      |      |      |      |      |             |      |      |  UP  |      |      |
     +------+------+------+------+------+             +------+------+------+------+------+
-    |      |      |      |      |      |             |      |      |      |      |      |
+    |      |      |      |      |      |             |      | LEFT | DOWN |RIGHT |      |
     +------+------+------+------+------+------+------+------+------+------+------+------+
-    |      |      |      |      |      |      |      |      |      |      |      |      |
+    |      |      |      |      |      |      |      |      |RAISE |      |      |RESET |
     +------+------+------+------+------+------+------+------+------+------+------+------+
    */
-  KEYMAP(KC_1, KC_2, KC_3, KC_4, KC_5,             KC_6, KC_7, KC_8, KC_9, KC_0, \
-                                SHIFT(KC_3), KC_LEFT, KC_DOWN, KC_RIGHT, SHIFT(KC_4), \
-                                  KC_PGDN, KC_4, KC_5, KC_6, SHIFT(KC_EQUAL), \
-                                KC_LBRC, KC_RBRC, SHIFT(KC_9), SHIFT(KC_0), SHIFT(KC_7), \
-                                  KC_GRAVE, KC_1, KC_2, KC_3, KC_BSLS,    \
+  KEYMAP(KC_1,  KC_2,  KC_3,  KC_4,  KC_5,             KC_6,    KC_7,    KC_8,    KC_9,     KC_0,  \
+         KC_NO, KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO,     KC_PGDN, KC_4,    KC_UP,   KC_6,     KC_NO, \
+         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,            KC_NO,   KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO, \
                                 MY_BOOT, SHIFT(KC_INS), KC_LGUI, KC_LSFT, KC_BSPC, KC_LCTL, \
-                                  KC_LALT, KC_SPC, MY_RAIS, KC_DOT, KC_0, MY_LOWR), 
-                                                                      \
+                                  KC_LALT, KC_SPC, MY_RAIS, KC_DOT, KC_0, MY_RLYR), 
+                                                                      
   /* LAYER_LOWER
     +------+------+------+------+------+             +------+------+------+------+------+
     |  !   |  @   |  #   |  $   |  %   |             |  ^   |  &   |  *   |  (   |  )   |
@@ -92,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     +------+------+------+------+------+             +------+------+------+------+------+
     |      |      |      |      |      |             |      |      |      |      |      |
     +------+------+------+------+------+------+------+------+------+------+------+------+
-    |      |      |      |      |      |      |      |      |      |      |      |      |
+    |      |      |      |      |      |      |      |      |RESET |      |      |LOWER |
     +------+------+------+------+------+------+------+------+------+------+------+------+
    */
 
@@ -102,9 +100,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          KC_NO, KC__VOLUP, KC_NO, KC_NO, MY_BOOT, \
                          KC_NO, KC_F1, KC_F2, KC_F3, KC_F12,            \
                          MY_RLYR, KC__VOLDOWN, KC_LGUI, KC_LSFT, KC_BSPC, KC_LCTL, \
-                         KC_LALT, KC_SPC, KC_NO, KC_PSCREEN, KC_SLCK, MY_LOWR),
+                         KC_LALT, KC_SPC, MY_RLYR, KC_PSCREEN, KC_SLCK, MY_LOWR),
 
-  /* LAYER_RESET */
+  /* LAYER_RESET - Top left key resets. All other keys do nothing. */
   KEYMAP(MY_BOOT,KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
          KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
          KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
