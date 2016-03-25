@@ -11,7 +11,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          KC_A, KC_S, KC_D, KC_F, KC_G,         KC_H, KC_J, KC_K,    KC_L,   KC_SCLN, \
          KC_FN5, KC_X, KC_C, KC_V, KC_B,         KC_N, KC_M, KC_COMM, KC_DOT, KC_FN4, \
          KC_ESC, KC_TAB, KC_LSFT, KC_LGUI, KC_BSPC, KC_LCTL, \
-                                     KC_RALT,  KC_SPC, KC_FN0, KC_MINS, KC_QUOT, KC_ENT), \
+                                       KC_FN6, KC_SPC, KC_FN0, KC_MINS, KC_QUOT, KC_ENT), \
   /* 1: punctuation and numbers */
   FN_ARROW_LAYER,                                     \
   /* 2: arrows and function keys */
@@ -23,8 +23,9 @@ const uint16_t PROGMEM fn_actions[] = {
   [1] = ACTION_LAYER_ON(2, 1),  // switch to layer 2
   [2] = ACTION_LAYER_OFF(2, 1),  // switch back to layer 0
   [3] = ACTION_FUNCTION(BOOTLOADER),
-  [4] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_SLSH),  // / key is LSHIFT when held down
-  [5] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_Z)      // Z key is RSHIFT when held down
+  [4] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_SLSH),  // / key is LSHIFT when held down
+  [5] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_Z),     // Z key is RSHIFT when held down
+  [6] = ACTION_MODS_TAP_KEY(MOD_RALT, KC_ENT)    // Enter key is also RALT
 };
 
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
