@@ -74,14 +74,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     +------+------+------+------+------+             +------+------+------+------+------+
     |      |      |      |      |      |             | PGDN | LEFT | DOWN |RIGHT |      |
     +------+------+------+------+------+------+------+------+------+------+------+------+
-    |      |      |      |RESET |      |      |      |      |RAISE |      |      |RESET |
+    |      |      | LGUI |      | BSPC | LCTL |      | SPC  |RAISE |      |      |RESET |
     +------+------+------+------+------+------+------+------+------+------+------+------+
    */
-  KEYMAP(KC_1,  KC_2,  KC_3,  KC_4,  KC_5,             KC_6,    KC_7,    KC_8,    KC_9,     KC_0,  \
-         KC_NO, KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO,     KC_PGUP, KC_HOME, KC_UP,   KC_END,   KC_NO, \
-         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,            KC_PGDN,   KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO, \
-         KC_NO, SHIFT(KC_INS), KC_LGUI, MY_RLYR, KC_BSPC, KC_LCTL, \
-                                              KC_LALT, KC_SPC, MY_RAIS, KC_DOT, KC_0, MY_RLYR), 
+  KEYMAP(KC_1,  KC_2,  KC_3,    KC_4,  KC_5,         KC_6,    KC_7,    KC_8,    KC_9,     KC_0,  \
+         KC_NO, KC_NO, KC_NO,   KC_NO, KC_NO,        KC_PGUP, KC_HOME, KC_UP,   KC_END,   KC_NO, \
+         KC_NO, KC_NO, KC_NO,   KC_NO, KC_NO,        KC_PGDN, KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO, \
+         KC_NO, KC_NO, KC_LGUI, KC_NO, KC_BSPC, KC_LCTL, \
+                                              KC_NO, KC_SPC,  MY_RAIS, KC_NO,   KC_NO,    MY_RLYR), 
                                                                       
   /* LAYER_LOWER
     +------+------+------+------+------+             +------+------+------+------+------+
